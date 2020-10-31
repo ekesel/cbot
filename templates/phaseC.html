@@ -1,0 +1,413 @@
+
+
+{% load static %}
+<!DOCTYPE html><html class=''>
+<head>
+<script src="https://use.typekit.net/hoy3lrg.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'><link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css'>
+<style class="cp-pen-styles">body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #27ae60;
+  font-family: "proxima-nova", "Source Sans Pro", sans-serif;
+  font-size: 1em;
+  letter-spacing: 0.1px;
+  color: #32465a;
+  text-rendering: optimizeLegibility;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  -webkit-font-smoothing: antialiased;
+}
+
+#frame {
+  width: 55%;
+  min-width: 360px;
+  max-width: 1000px;
+  height: 92vh;
+  min-height: 300px;
+  max-height: 720px;
+  background-image: url('/static/images/back.jpg');
+}
+@media screen and (max-width: 360px) {
+  #frame {
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+#frame .content {
+  /*float: right;*/
+  /*width: 60%;*/
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+/*@media screen and (max-width: 735px) {
+  #frame .content {
+    width: calc(100% - 58px);
+    min-width: 300px !important;
+  }
+}
+@media screen and (min-width: 900px) {
+  #frame .content {
+    width: calc(100% - 340px);
+  }
+}*/
+#frame .content .contact-profile {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background: #f5f5f5;
+}
+#frame .content .contact-profile img {
+  width: 40px;
+  border-radius: 50%;
+  float: left;
+  margin: 9px 12px 0 9px;
+}
+#frame .content .contact-profile p {
+  /*float: left;*/
+  margin: 9px 9px 9px 9px;
+}
+#frame .content .contact-profile .social-media {
+  float: right;
+}
+#frame .content .contact-profile .social-media i {
+  margin-left: 14px;
+  cursor: pointer;
+}
+#frame .content .contact-profile .social-media i:nth-last-child(1) {
+  margin-right: 20px;
+}
+#frame .content .contact-profile .social-media i:hover {
+  color: #435f7a;
+}
+#frame .content .messages {
+  height: auto;
+  min-height: calc(100% - 93px);
+  max-height: calc(100% - 93px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+@media screen and (max-width: 735px) {
+  #frame .content .messages {
+    max-height: calc(100% - 105px);
+  }
+}
+#frame .content .messages::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+#frame .content .messages::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#frame .content .messages ul li {
+  display: inline-block;
+  clear: both;
+  float: left;
+  margin: 15px 15px 5px 15px;
+  width: calc(100% - 25px);
+  font-size: 0.9em;
+}
+#frame .content .messages ul li:nth-last-child(1) {
+  margin-bottom: 20px;
+}
+#frame .content .messages ul li.sent img {
+  margin: 6px 8px 0 0;
+}
+#frame .content .messages ul li.sent p {
+  background: #435f7a;
+  color: #f5f5f5;
+}
+#frame .content .messages ul li.replies img {
+  float: right;
+  margin: 6px 0 0 8px;
+}
+#frame .content .messages ul li.replies p {
+  background: #7eeaf1;
+  float: right;
+}
+#frame .content .messages ul li img {
+  width: 22px;
+  border-radius: 50%;
+  float: left;
+}
+#frame .content .messages ul li p {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 205px;
+  line-height: 130%;
+}
+@media screen and (min-width: 735px) {
+  #frame .content .messages ul li p {
+    max-width: 300px;
+  }
+}
+#frame .content .message-input {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 99;
+}
+#frame .content .message-input .wrap {
+  position: relative;
+}
+#frame .content .message-input .wrap input {
+  font-family: "proxima-nova",  "Source Sans Pro", sans-serif;
+  float: left;
+  border: none;
+  width: calc(100% - 90px);
+  padding: 11px 32px 10px 8px;
+  font-size: 0.8em;
+  color: #32465a;
+}
+@media screen and (max-width: 735px) {
+  #frame .content .message-input .wrap input {
+    padding: 15px 32px 16px 8px;
+  }
+}
+#frame .content .message-input .wrap input:focus {
+  outline: none;
+}
+#frame .content .message-input .wrap .attachment {
+  position: absolute;
+  right: 60px;
+  z-index: 4;
+  margin-top: 10px;
+  font-size: 1.1em;
+  color: #435f7a;
+  opacity: .5;
+  cursor: pointer;
+}
+@media screen and (max-width: 735px) {
+  #frame .content .message-input .wrap .attachment {
+    margin-top: 17px;
+    right: 65px;
+  }
+}
+#frame .content .message-input .wrap .attachment:hover {
+  opacity: 1;
+}
+#frame .content .message-input .wrap button {
+  float: right;
+  border: none;
+  width: 50px;
+  padding: 12px 0;
+  cursor: pointer;
+  background: #32465a;
+  color: #f5f5f5;
+}
+@media screen and (max-width: 735px) {
+  #frame .content .message-input .wrap button {
+    padding: 16px 0;
+  }
+}
+#frame .content .message-input .wrap button:hover {
+  background: #435f7a;
+}
+#frame .content .message-input .wrap button:focus {
+  outline: none;
+}
+</style></head><body>
+
+<div id="frame">
+
+  <div class="content">
+    <div class="contact-profile">
+      <p>Corona Chatbot</p>
+      <p style="text-align:right">
+        <a href="{% url 'logout' %}" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a>
+      </p> 
+    </div>
+    <div class="messages">
+      <ul>
+        <li class="sent">
+          <img src="/static/images/bot.png/" alt="" />
+          <p>Namaste, {{ user.username }}!</p>
+        </li>
+        <li class="sent">
+          <img src="/static/images/bot.png/" alt="" />
+          <p>Welcome to Corona Bot!</p>
+        </li>
+        <li class="sent">
+          <img src="/static/images/bot.png/" alt="" />
+          <p>Please Tell Cbot What to Do!<br>
+            A)Get Live Updates of Covid-19 Virus in India including details about any state!<br>
+            B)Get Vaccine Updates<br>
+            C)Get Diagnosis for Covid 19 by Cbot's Symptoms Checker!<br>
+            D)Check for Hospitals in your City!<br>
+            E)Get Covid-19 Virus Cases details across the Whole Globe!</p>
+        </li>
+        <li class="replies">
+          <img src="/static/images/person.png" alt="" />
+          <p>{{replies}}</p>
+        </li>
+        <li class="sent">
+          <img src="/static/images/bot.png" alt="" />
+          <p>Following is the list of symptoms for Covid-19.
+            Please tell us how many Symptoms you are feeling, {{user.username}} ?</p>
+        </li>
+        <li class="sent">
+          <img src="/static/images/bot.png" alt="" />
+          <p>COVID-19 SYMPTOMS LIST <br>
+            1)FEVER <br>
+            2)COUGH <br>
+            3)SHORTNESS OF BREATH <br>
+            4)HEADACHE <br>
+            5)SORE THROAT <br>
+            6)NEW LOSS OF SMELL OR TASTE <br>
+            7)MUSCLE PAINS <br>
+            8)REPEATED SHAKING WITH CHILLS <br>
+            Please enter the value in numerical way</p>
+        </li>
+        {%if replyc is not none%}
+        <li class="replies">
+          <img src="/static/images/person.png" alt="" />
+          <p>{{replyc}}</p>
+        </li>
+        {%endif%}
+        {% if replyc is not none %}
+        <li class="sent">
+          <img src="/static/images/bot.png" alt="" />
+          <p>You have entered {{replyc}} symptoms of Corona</p>
+        </li>
+        {%endif%}
+        <li class="sent">
+          <img src="/static/images/bot.png" alt="" />
+          {% if replyc == '1' %}
+          <p>Cool yourself down with water <br>
+             Eat and Drink Properly <br>
+             Just Home Quarantine Yourself, No need for a Doctor!
+          </p>
+          {%endif%}
+          {% if replyc == '2' %}
+          <p>Cool yourself down with water <br>
+             Eat and Drink Properly <br>
+             Get plenty of rest <br>
+             Just Home Quarantine Yourself, No need for a Doctor!
+          </p>
+          {%endif%}
+          {% if replyc == '3' %}
+          <p>Cool yourself down with water <br>
+             Eat and Drink Properly <br>
+             Get plenty of rest <br>
+             Apply a cold pack to your eyes or head. <br>
+             Just Home Quarantine Yourself, No need for a Doctor!
+          </p>
+          {%endif%}
+          {% if replyc == '4' %}
+          <p>Cool yourself down with water <br>
+             Eat and Drink Properly <br>
+             Get plenty of rest <br>
+             Apply a cold pack to your eyes or head. <br>
+             Drink some tart cherry juice.,Get a massage. <br>
+             Just Home Quarantine Yourself, No need for a Doctor!
+          </p>
+          {%endif%}
+          {% if replyc == '5' %}
+          <p>Cool yourself down with water <br>
+             Eat and Drink Properly <br>
+             Get plenty of rest <br>
+             Apply a cold pack to your eyes or head. <br>
+             Drink some tart cherry juice.,Get a massage. <br>
+             Clear irritants from your home. <br>
+             You better visit Doctor, You have 60% percent Chance of having Corona!
+          </p>
+          {%endif%}
+          {% if replyc == '6' %}
+          <p>Cool yourself down with water <br>
+             Eat and Drink Properly <br>
+             Get plenty of rest <br>
+             Apply a cold pack to your eyes or head. <br>
+             Drink some tart cherry juice.,Get a massage. <br>
+             Clear irritants from your home. <br>
+             Drink lots of fluids <br>
+             Swallow some honey,Sip a hot drink. <br>
+             You better visit Doctor, You have 80% percent Chance of having Corona!
+          </p>
+          {%endif%}
+          {% if replyc == '7' %}
+          <p>Cool yourself down with water <br>
+             Eat and Drink Properly <br>
+             Get plenty of rest <br>
+             Apply a cold pack to your eyes or head. <br>
+             Drink some tart cherry juice.,Get a massage. <br>
+             Clear irritants from your home. <br>
+             Drink lots of fluids <br>
+             Swallow some honey,Sip a hot drink. <br>
+             Take a warm bath or shower. <br>
+             <b> You better visit Doctor, You have 90% percent Chance of having Corona! </b>
+          </p>
+          {%endif%}
+          {% if replyc == '8' %}
+          <p>Cool yourself down with water <br>
+             Eat and Drink Properly <br>
+             Get plenty of rest <br>
+             Apply a cold pack to your eyes or head. <br>
+             Drink some tart cherry juice.,Get a massage. <br>
+             Clear irritants from your home. <br>
+             Drink lots of fluids <br>
+             Swallow some honey,Sip a hot drink. <br>
+             Take a warm bath or shower. <br>
+             <b>You better visit Doctor, You have 100% percent Chance of having Corona!</b>
+          </p>
+          {%endif%}
+        </li>
+        <li class="sent">
+          <img src="/static/images/bot.png/" alt="" />
+          <p><a href="/">Click here to Go Back to again chat with bot!</a></p>
+        </li>
+      </ul>
+    </div>
+    <div class="message-input">
+      <div class="wrap">
+        <form method="POST">
+      <input type="text" name = "replyc" placeholder="Write your message..." />    
+      <i class="fa fa-paperclip attachment" aria-hidden="true"></i>
+      <button class="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+    </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script >$(".messages").animate({ scrollTop: $(document).height() }, "fast");
+
+$("#profile-img").click(function() {
+  $("#status-options").toggleClass("active");
+});
+
+$(".expand-button").click(function() {
+  $("#profile").toggleClass("expanded");
+  $("#contacts").toggleClass("expanded");
+});
+
+$("#status-options ul li").click(function() {
+  $("#profile-img").removeClass();
+  $("#status-online").removeClass("active");
+  $("#status-away").removeClass("active");
+  $("#status-busy").removeClass("active");
+  $("#status-offline").removeClass("active");
+  $(this).addClass("active");
+  
+  if($("#status-online").hasClass("active")) {
+    $("#profile-img").addClass("online");
+  } else if ($("#status-away").hasClass("active")) {
+    $("#profile-img").addClass("away");
+  } else if ($("#status-busy").hasClass("active")) {
+    $("#profile-img").addClass("busy");
+  } else if ($("#status-offline").hasClass("active")) {
+    $("#profile-img").addClass("offline");
+  } else {
+    $("#profile-img").removeClass();
+  };
+  
+  $("#status-options").removeClass("active");
+});
+</script>
+</body></html>
